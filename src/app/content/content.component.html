@@ -1,0 +1,76 @@
+    <div class="container shadow-sm p-3 mb-5 bg-white rounded">
+      <form>
+        <br>
+        <div class="submit-form">
+            <br>
+            <div class="form1 shadow p-5 bg-light">
+              <div class="form-row">
+                <!-- <div class="form-group col-md-6">
+                  <label for="idClient">Id Client</label>
+                  <input type="text" class="form-control" id="idClient" required [(ngModel)]="info.year"
+                    name="idClient" />
+                </div> -->
+                <div class="form-group col-md-3">
+                  <label for="year">Year:</label>
+                  <input type="text" class="form-control" id="year"
+                    name="year" />
+                </div>
+              </div>
+
+  
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="minTemp">Minimum temperature in °C:</label>
+                    <input type="text" class="form-control" id="minTemp"
+                      name="minTemp" />
+                  </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="maxTemp">Maximum temperature in °C:</label>
+                    <input type="text" class="form-control" id="maxTemp"
+                      name="maxTemp" />
+                  </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="avgTemp">Average temperature in °C: </label>
+                    <input type="text" class="form-control" id="avgTemp"
+                      name="avgTemp" />
+                  </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="pcp">Precipitation in millimeters: </label>
+                    <input type="text" class="form-control" id="pcp"
+                      name="pcp" />
+                  </div>
+              </div>
+
+  
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="rate">Select crime:</label>
+                  <select id="rate" class="form-control">
+                    <option>Homicide</option>
+                    <option>Violent crime</option>
+                    <option>Robbery</option>
+                    <option>Aggravated assault</option>
+                    <option>Property crime</option>
+                    <option>Burglary</option>
+                    <option>Larceny</option>
+                    <option>Motor vehicle theft</option>
+                  </select>
+                </div>
+            </div>
+
+              
+              <button (click)="sendInfo()" class="btn">Visualize</button>
+        </div>
+        <br>
+    </div>
+      </form>
+    </div>

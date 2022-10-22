@@ -1,0 +1,19 @@
+
+.btn{
+    border:1px solid #eaa975;
+    background-color: white;
+    color: #eaa975; 
+    font-weight :bold;
+    margin-right: 20px;
+}
+.btn:hover{
+  background-color: #eaa975;
+  color: white;
+}
+
+
+
+.container{
+    float: left;
+    size: inherit;
+}

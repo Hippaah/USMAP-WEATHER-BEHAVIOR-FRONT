@@ -1,3 +1,4 @@
+
     <div class="container shadow-sm p-3 mb-5 bg-white rounded">
       <form>
         <br>
@@ -5,14 +6,9 @@
             <br>
             <div class="form1 shadow p-5 bg-light">
               <div class="form-row">
-                <!-- <div class="form-group col-md-6">
-                  <label for="idClient">Id Client</label>
-                  <input type="text" class="form-control" id="idClient" required [(ngModel)]="info.year"
-                    name="idClient" />
-                </div> -->
                 <div class="form-group col-md-3">
                   <label for="year">Year:</label>
-                  <input type="text" class="form-control" id="year"
+                  <input type="text" class="form-control" id="year" required [(ngModel)]="info.year"
                     name="year" />
                 </div>
               </div>
@@ -20,32 +16,32 @@
   
               <div class="form-row">
                 <div class="form-group col-md-3">
-                    <label for="minTemp">Minimum temperature in °C:</label>
-                    <input type="text" class="form-control" id="minTemp"
-                      name="minTemp" />
+                    <label for="min_temp">Minimum temperature in °C:</label>
+                    <input type="text" class="form-control" id="min_temp" required [(ngModel)]="info.min_temp"
+                      name="min_temp" />
                   </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-3">
-                    <label for="maxTemp">Maximum temperature in °C:</label>
-                    <input type="text" class="form-control" id="maxTemp"
-                      name="maxTemp" />
+                    <label for="max_temp">Maximum temperature in °C:</label>
+                    <input type="text" class="form-control" id="max_temp" required [(ngModel)]="info.max_temp"
+                      name="max_temp" />
                   </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-3">
-                    <label for="avgTemp">Average temperature in °C: </label>
-                    <input type="text" class="form-control" id="avgTemp"
-                      name="avgTemp" />
+                    <label for="avg_temp">Average temperature in °C: </label>
+                    <input type="text" class="form-control" id="avg_temp" required [(ngModel)]="info.avg_temp"
+                      name="avg_temp" />
                   </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="pcp">Precipitation in millimeters: </label>
-                    <input type="text" class="form-control" id="pcp"
+                    <input type="text" class="form-control" id="pcp" required [(ngModel)]="info.pcp"
                       name="pcp" />
                   </div>
               </div>
@@ -53,24 +49,70 @@
   
               <div class="form-row">
                 <div class="form-group col-md-3">
-                  <label for="rate">Select crime:</label>
-                  <select id="rate" class="form-control">
-                    <option>Homicide</option>
-                    <option>Violent crime</option>
-                    <option>Robbery</option>
-                    <option>Aggravated assault</option>
-                    <option>Property crime</option>
-                    <option>Burglary</option>
-                    <option>Larceny</option>
-                    <option>Motor vehicle theft</option>
+                  <label for="crime_type">Select crime:</label>
+                  <select id="crime_type" class="form-control" required [(ngModel)]="info.crime_type"
+                  name="crime_type">
+                    <option selected>homicide</option>
+                    <option>violent_crime</option>
+                    <option>robbery</option>
+                    <option>aggravated_assault</option>
+                    <option>property_crime</option>
+                    <option>burglary</option>
+                    <option>larceny</option>
+                    <option>motor_vehicle_theft</option>
                   </select>
                 </div>
             </div>
 
               
-              <button (click)="sendInfo()" class="btn">Visualize</button>
+              <button (click)="getInfo()" class="btn">Visualize</button>
         </div>
         <br>
+
+        <table class="table container-fluid" id="excel-table">
+          <thead style="background-color: rgba(199, 198, 197, 0.674);">
+            <tr>
+              <th scope="col">State</th>
+              <th scope="col">R2</th>
+              <th scope="col">PREDICTION</th>
+              <th scope="col"> </th>
+            </tr>
+          </thead>
+
+
+
+
+         <tbody>
+          <tr *ngFor="let state of states">
+          <td>{{state}}</td> 
+          <td>{{ resps.AK.R2 }} </td>
+          <td>{{ resps.AL.Prediction }} </td>
+        </tr>
+
+           
+<!--         
+             <tr *ngFor="let state of states; let i=index">
+              <ng-container *ngFor="let resp of resps">
+                <td>{{ state.name }}</td>
+                <td>{{ resps.state.name.R2 }}</td>
+                <td>{{ resps.state.name.Prediction }}</td>
+              </ng-container>
+            </tr> -->
+
+
+          </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+
+
     </div>
       </form>
     </div>
